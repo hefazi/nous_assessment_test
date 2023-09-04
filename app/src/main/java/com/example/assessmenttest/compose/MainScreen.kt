@@ -21,6 +21,14 @@ import com.example.assessmenttest.module.ImageUiState
 import com.example.assessmenttest.module.compose.ImageGrid
 import com.example.assessmenttest.ui.theme.AssessmentTestTheme
 
+/**
+ * This is a Composable function called MainScreen that takes in a NavHostController and an ImageListViewModel
+ * as parameters. It displays a search bar that filters the images based on the user's input.
+ * The UI state is collected from the viewModel and displayed accordingly.
+ * If the state is Success, it displays the images in a grid and allows the user to navigate to
+ * the details screen for each image. If the state is Error, it displays an error message.
+ * If the state is Loading, it displays a loading indicator.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(navController: NavHostController, viewModel: ImageListViewModel) {

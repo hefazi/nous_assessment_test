@@ -11,6 +11,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.assessmenttest.ui.theme.AssessmentTestTheme
 
+/**
+ * Inside the Column, there is a Text composable that displays the text "No Item!" with a large title style
+ * and the primary color from the MaterialTheme.
+ */
 @Composable
 fun NoItem(size: Int = 0) {
     if (size > 0) return

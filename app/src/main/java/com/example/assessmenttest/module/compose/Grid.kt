@@ -11,6 +11,10 @@ import androidx.compose.ui.unit.dp
 import com.example.assessmenttest.compose.NoItem
 import com.example.assessmenttest.module.models.ImageModel
 
+/**
+ * This function generates a grid of images with adaptive column sizing and handles the case of no
+ * images being present.
+ */
 @Composable
 fun ImageGrid(images: List<ImageModel>, onImageClicked: (ImageModel) -> Unit) {
     Column {

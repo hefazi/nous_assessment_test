@@ -17,6 +17,12 @@ import coil.compose.rememberAsyncImagePainter
 import com.example.assessmenttest.R
 import com.example.assessmenttest.module.models.ImageModel
 
+/**
+ * This is a Composable function called "ImageCard" that displays an image card with a clickable behavior.
+ * It takes in an "image" parameter of type "ImageModel" which contains the data for the image to be
+ * displayed. It also takes in an "onImageClicked" parameter, which is a callback function that will
+ * be invoked when the image card is clicked.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ImageCard(image: ImageModel, onImageClicked: (ImageModel) -> Unit) {

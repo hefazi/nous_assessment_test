@@ -10,6 +10,10 @@ import androidx.navigation.navArgument
 import com.example.assessmenttest.module.ImageListViewModel
 import com.example.assessmenttest.module.compose.ImageDetailsView
 
+/**
+ * This code sets up the navigation for the app and defines the screens that can be navigated to.
+ * It also handles passing data between screens using arguments.
+ */
 @Composable
 fun AssessmentTestApp(viewModel: ImageListViewModel, emailViewModel: EmailViewModel) {
     val navController = rememberNavController()

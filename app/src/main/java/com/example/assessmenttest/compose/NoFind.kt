@@ -10,6 +10,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.example.assessmenttest.ui.theme.AssessmentTestTheme
 
+/**
+ * The function is responsible for displaying a message when an item is not found.
+ * It is wrapped inside a theme called "AssessmentTestTheme".
+ */
 @Composable
 fun NoFind() {
     AssessmentTestTheme {

@@ -19,6 +19,10 @@ import com.example.assessmenttest.compose.NoFind
 import com.example.assessmenttest.module.ImageListViewModel
 import com.example.assessmenttest.module.models.ImageModel
 
+/**
+ * This composable displays the details of an image, including the image itself, title, description,
+ * and a button to share the image by email.
+ */
 @Composable
 fun ImageDetailsView(
     viewModel: ImageListViewModel,

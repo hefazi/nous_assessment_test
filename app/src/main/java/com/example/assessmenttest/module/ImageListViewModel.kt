@@ -50,4 +50,18 @@ class ImageListViewModel : ViewModel() {
     fun filterImages(_query: String) {
         _uiState.value = ImageUiState.Success(repository.filterImages(_query))
     }
+
+
+    fun findImageById(id: Long): ImageModel? {
+        return repository.findImageById(id)
+    }
+
+//    fun onImageClicked(image: ImageModel) {
+//        // Navigate to the details view
+//
+//    }
+//
+//    fun sendImageByEmail(image: ImageModel) {
+//        // Send the image, title, and description via email
+//    }
 }

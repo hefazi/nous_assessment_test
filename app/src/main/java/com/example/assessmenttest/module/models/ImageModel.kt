@@ -4,5 +4,5 @@ data class ImageModel(
     val imageUrl: String,
     val title: String,
     val description: String,
-    val id: String
+    val id: Long
 )

@@ -33,4 +33,11 @@ class ImageRepository {
             it.title.contains(query, true) || it.description.contains(query, true)
         }
     }
+
+    fun findImageById(id: Long): ImageModel? {
+        val i = images.find {
+            it.id == id
+        }
+        return i
+    }
 }

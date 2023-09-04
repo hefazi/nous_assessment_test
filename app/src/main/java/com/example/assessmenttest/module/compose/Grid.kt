@@ -12,14 +12,14 @@ import com.example.assessmenttest.compose.NoItem
 import com.example.assessmenttest.module.models.ImageModel
 
 @Composable
-fun ImageGrid(images: List<ImageModel>) {
+fun ImageGrid(images: List<ImageModel>, onImageClicked: (ImageModel) -> Unit) {
     Column {
         LazyVerticalGrid(
             modifier = Modifier.padding(horizontal = 5.dp),
             columns = GridCells.Adaptive(minSize = 150.dp)
         ) {
             items(images) { photo ->
-                ImageCard(photo)
+                ImageCard(photo, onImageClicked)
             }
         }
         NoItem(images.size)

@@ -14,6 +14,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.assessmenttest.module.ImageListViewModel
 import com.example.assessmenttest.module.ImageUiState
 import com.example.assessmenttest.module.compose.ImageGrid
@@ -21,7 +23,7 @@ import com.example.assessmenttest.ui.theme.AssessmentTestTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen(viewModel: ImageListViewModel) {
+fun MainScreen(navController: NavHostController, viewModel: ImageListViewModel) {
     var text by remember { mutableStateOf(TextFieldValue("")) }
 
     val uiState by viewModel.uiState.collectAsState()
@@ -37,7 +39,13 @@ fun MainScreen(viewModel: ImageListViewModel) {
             placeholder = { Text("Search images...") }
         )
         when (uiState) {
-            is ImageUiState.Success -> ImageGrid(images = (uiState as ImageUiState.Success).data)
+            is ImageUiState.Success -> ImageGrid(
+                images = (uiState as ImageUiState.Success).data
+            ) { imageModel ->
+                navController.navigate("item_details/${imageModel.id}")
+//                navController.navigate("item_details?image=${imageModel.imageUrl}&id=${imageModel.id}&title=${imageModel.title}&description=${imageModel.description}")
+            }
+
             is ImageUiState.Error -> ErrorText(message = (uiState as ImageUiState.Error).message)
             ImageUiState.Loading -> IndeterminateCircularIndicator()
         }
@@ -50,6 +58,6 @@ fun MainScreen(viewModel: ImageListViewModel) {
 @Composable
 fun ImageListScreenPreview() {
     AssessmentTestTheme {
-        MainScreen(viewModel = ImageListViewModel())
+        MainScreen(rememberNavController(), viewModel = ImageListViewModel())
     }
 }

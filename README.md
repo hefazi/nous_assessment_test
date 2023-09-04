@@ -5,7 +5,6 @@ The project is set up using the following Jetpack libraries:
 * ViewModel
 * LiveData
 * Navigation
-* Hilt
 
 The project also uses the following **third-party** libraries:
 

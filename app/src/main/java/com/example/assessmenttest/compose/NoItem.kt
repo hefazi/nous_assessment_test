@@ -22,7 +22,7 @@ fun NoItem(size: Int = 0) {
         Text(
             "No Item!",
             style = MaterialTheme.typography.titleLarge,
-            color = MaterialTheme.colorScheme.error
+            color = MaterialTheme.colorScheme.primary
         )
     }
 }
